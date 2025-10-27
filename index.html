@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>todo list</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>todo list</h1>
+    </header>
+
+    <main class="container">
+        <section class="input-area">
+            <div class="field-row">
+                <input id="new-title" class="input-title" placeholder="new todo" />
+                <button id="add-btn" class="btn-add">add</button>
+            </div>
+            <textarea id="new-desc" class="input-desc" placeholder="description"></textarea>
+        </section>
+
+        <section id="list-wrap" class="list-wrap">
+            <ul id="todo-list" class="todo-list">
+                <!-- default items injected by JS -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

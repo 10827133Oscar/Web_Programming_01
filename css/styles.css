@@ -1,0 +1,24 @@
+:root{
+  --bg:#f7f6ec;
+  --card:#fff;
+  --accent:#000;
+  --danger:#ff6b6b;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto,'Noto Sans TC', 'Helvetica Neue', Arial;background:var(--bg)}
+.topbar{position:fixed;top:0;left:0;right:0;height:100px;display:flex;align-items:center;justify-content:center}
+.topbar h1{margin:0;font-size:48px}
+.container{padding-top:140px;max-width:720px;margin:0 auto}
+.input-area{position:fixed;top:100px;left:50%;transform:translateX(-50%);width:720px;max-width:calc(100% - 48px);background:transparent;padding:12px}
+.field-row{display:flex;gap:12px;align-items:center}
+.input-title{flex:1;padding:12px;border-radius:8px;border:2px solid #ccc;font-size:20px}
+.btn-add{padding:10px 14px;border-radius:8px;border:2px solid #222;background:#fff;cursor:pointer}
+.input-desc{width:100%;margin-top:12px;padding:12px;border-radius:8px;border:1px solid #ddd;min-height:80px}
+.list-wrap{margin-top:260px;max-width:720px;width:100%;margin-left:auto;margin-right:auto;max-height:55vh;overflow:auto}
+.todo-list{list-style:none;padding:0;margin:0 12px}
+.todo-item{display:flex;align-items:center;gap:12px;background:var(--card);padding:14px;border-radius:24px;margin-bottom:12px;border:1px solid #eee}
+.todo-left{display:flex;align-items:center;gap:12px;flex:1}
+.todo-checkbox{width:22px;height:22px}
+.todo-title{font-size:20px}
+.btn-delete{background:var(--danger);color:#fff;border:none;padding:8px 12px;border-radius:16px;cursor:pointer}
+.desc-content{padding:12px 20px;background:#fafafa;border-left:4px solid #eee;border-radius:12px;margin-top:8px}
