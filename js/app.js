@@ -1,5 +1,5 @@
 const defaultTodos = [
-  { id: '1', title: 'todo 1', desc: '這是 todo 1 的描述，點擊標題可以展開或收合。' },
+  { id: '1', title: 'todo 1', desc: '這是 todo 1 的描述，點擊項目（除勾選框與 delete）可以展開或收合。' },
   { id: '2', title: 'todo 2', desc: '這是 todo 2 的描述。' }
 ];
 
@@ -23,6 +23,10 @@ function render(){
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.className = 'todo-checkbox';
+    // 阻止勾選框的點擊冒泡，避免觸發展開描述
+    checkbox.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
 
     const title = document.createElement('div');
     title.className = 'todo-title';
@@ -43,8 +47,12 @@ function render(){
     li.appendChild(left);
     li.appendChild(del);
 
-    // clickable to toggle desc
-    li.addEventListener('click', () => {
+    // 只有在點擊項目（非勾選框與非 delete）時，才切換描述
+    li.addEventListener('click', (e) => {
+      // 若點擊目標是 checkbox 或 delete，就不處理
+      const target = e.target;
+      if(target.closest('.todo-checkbox') || target.closest('.btn-delete')) return;
+
       const existing = li.querySelector('.desc-content');
       if(existing){
         existing.remove();
